@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung bình cộng số chia hết cho 3</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Bạn muốn nhập bao nhiêu số nguyên (tối đa 50)?"));
+    while (isNaN(n) || n < 1 || n > 50) {
+        n = parseInt(prompt("Vui lòng nhập một số từ 1 đến 50:"));
+    }
+    let songuyen = [];
+    let sochiahet = [];
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+        let num = parseInt(prompt("Nhập số nguyên thứ " + (i + 1) + ":"));
+        while (isNaN(num)) {
+            num = parseInt(prompt("Vui lòng nhập một số nguyên hợp lệ:"));
+        }
+        songuyen.push(num);
+        if (num % 3 === 0) {
+            sochiahet.push(num);
+            sum += num;
+        }
+    }
+    alert("Mảng bạn vừa nhập: " + songuyen.join(", "));
+    if (sochiahet.length > 0) {
+        let average = sum / sochiahet.length;
+        alert("Trung bình cộng các số chia hết cho 3 là: " + average.toFixed(2));
+    } else {
+        alert("Không có số nào trong mảng chia hết cho 3.");
+    }
+</script>
+</body>
+</html>
