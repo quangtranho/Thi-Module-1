@@ -11,23 +11,23 @@
     while (isNaN(n) || n < 1 || n > 50) {
         n = parseInt(prompt("Vui lòng nhập một số từ 1 đến 50:"));
     }
-    let songuyen = [];
-    let sochiahet = [];
+    let soNguyen = [];
+    let soChiaHet = [];
     let sum = 0;
     for (let i = 0; i < n; i++) {
         let num = parseInt(prompt("Nhập số nguyên thứ " + (i + 1) + ":"));
         while (isNaN(num)) {
             num = parseInt(prompt("Vui lòng nhập một số nguyên hợp lệ:"));
         }
-        songuyen.push(num);
+        soNguyen.push(num);
         if (num % 3 === 0) {
-            sochiahet.push(num);
+            soChiaHet.push(num);
             sum += num;
         }
     }
-    alert("Mảng bạn vừa nhập: " + songuyen.join(", "));
-    if (sochiahet.length > 0) {
-        let average = sum / sochiahet.length;
+    alert("Mảng bạn vừa nhập: " + soNguyen.join(", "));
+    if (soChiaHet.length > 0) {
+        let average = sum / soChiaHet.length;
         alert("Trung bình cộng các số chia hết cho 3 là: " + average.toFixed(2));
     } else {
         alert("Không có số nào trong mảng chia hết cho 3.");

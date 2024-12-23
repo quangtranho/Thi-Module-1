@@ -6,7 +6,25 @@
 </head>
 <body>
 <script>
-
+    let input = prompt("Nhập tháng/năm theo định dạng MM/yyyy (ví dụ: 02/2024):");
+    let dinhDang = /^(0[1-9]|1[0-2])\/\d{4}$/;
+    if (!dinhDang.test(input)) {
+        alert("Định dạng không hợp lệ. Vui lòng nhập đúng theo MM/yyyy.");
+    } else {
+        let [month, year] = input.split("/").map(Number);
+        if (month==2){
+            if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)){
+                days = 29;
+            }else {
+                days = 28;
+            }
+        }else if (month === 4 || month === 6 || month === 9 || month === 11) {
+            days = 30;
+        } else {
+            days = 31;
+        }
+        alert(`Tháng ${month}/${year} có ${days} ngày.`);
+    }
 </script>
 </body>
 </html>
